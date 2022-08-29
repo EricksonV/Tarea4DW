@@ -30,7 +30,7 @@ class Model_alumnos extends CI_Model
         return $query->result();
     }
 
-    function create($datos) 
+    function crear($datos) 
 	{
 		return $this->db->insert('alumnos', $datos);               
 	}

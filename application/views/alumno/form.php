@@ -1,3 +1,4 @@
+
 <div class="box box-primary">
     <div class="box-header with-border">
         <h3 class="box-title"><?= $titulo ?> </h3>
@@ -15,7 +16,6 @@
         </div>
     <?php endif ?>
     <!-- /.box-header -->
-
     <form action="<?php echo $accion ?>" method="post">
 
         <?php  
@@ -67,22 +67,27 @@
                 <option value="0 "<?php if($estado==0) echo 'selected'?>>Activa</option>
                 <option value="1"<?php if($estado==1) echo 'selected'?>>Inactiva</option>
             </select>
+
         </div>
         <br>
 
 
         <div class="form-group">
             <button type="submit" class="btn btn-primary">
-                <ion-icon name="save-outline"></ion-icon> Guardar
+                <ion-icon name="save-outline"></ion-icon> Guardar              
             </button>
             <button type="button" class="btn btn-default" onclick="location.href='<?= site_url('alumnosController/') ?>'">
                 <ion-icon name="exit-outline"></ion-icon>
                 Regresar
             </button>
         </div>
-</div>
 
+</div>
+ 
 </form>
 
 
 </div>
+
+
+

@@ -21,7 +21,7 @@ class AlumnosController extends CI_Controller
     function index()
     {
         $this->data['resultados'] = $this->Model_alumnos->getAlmnos();
-        $this->data['titulo'] = "Lista de Alumnos";
+        $this->data['titulo'] = "Registro de Alumnos";
         $this->data['vista'] = "alumno/index";
         $this->load->view('layout/partialView', $this->data);
     }
@@ -31,7 +31,7 @@ class AlumnosController extends CI_Controller
      */
     public function form()
     {
-        $this->data['titulo'] = "Mantenimiento de Alumnos";
+        $this->data['titulo'] = "Ingreso de Alumnos";
         $this->data['vista'] = "alumno/form";
         $this->data['accion'] = site_url('alumnosController/crear');
         $this->load->view('layout/partialView', $this->data);
@@ -49,6 +49,7 @@ class AlumnosController extends CI_Controller
      * Recibe los datos del formulario para crear un nuevo registro
      * @return [type] [retorna vista con datos cargados en edit]
      */
+
     public function crear()
     {
         if ($_POST) {
@@ -61,7 +62,7 @@ class AlumnosController extends CI_Controller
                 'inactivo' => $this->input->post('inactivo'),
                 'user' => 1
             );
-
+            
             if ($this->Model_alumnos->crear($datos)) {
                 $this->session->set_flashdata('eok', 'Registro creado satisfactoriamente');
             } else {
@@ -113,4 +114,8 @@ class AlumnosController extends CI_Controller
         }
         redirect('alumnosController');
     }
+
+
+    
 }
+

@@ -12,6 +12,7 @@
 <h2>Tarea EricksonV11</h2>
 
 <body>
+    
     <div style="background-color: #ecf0f5;" class="containter-fluid">
         <?php $this->load->view($vista) ?>
     </div>
