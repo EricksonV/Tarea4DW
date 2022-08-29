@@ -33,7 +33,7 @@ class AlumnosController extends CI_Controller
     {
         $this->data['titulo'] = "Mantenimiento de Alumnos";
         $this->data['vista'] = "alumno/form";
-        $this->data['accion'] = site_url('alumnosController/create');
+        $this->data['accion'] = site_url('alumnosController/crear');
         $this->load->view('layout/partialView', $this->data);
     }
 
@@ -49,7 +49,7 @@ class AlumnosController extends CI_Controller
      * Recibe los datos del formulario para crear un nuevo registro
      * @return [type] [retorna vista con datos cargados en edit]
      */
-    public function create()
+    public function crear()
     {
         if ($_POST) {
             $datos = array(
@@ -62,7 +62,7 @@ class AlumnosController extends CI_Controller
                 'user' => 1
             );
 
-            if ($this->Model_alumnos->create($datos)) {
+            if ($this->Model_alumnos->crear($datos)) {
                 $this->session->set_flashdata('eok', 'Registro creado satisfactoriamente');
             } else {
                 $this->session->set_flashdata('eerror', 'Ocurrio un error al intentar crear el registro');
